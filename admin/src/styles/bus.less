@@ -1,0 +1,307 @@
+// 定义风格变量
+@fzcolor: #12123C;
+@bncolor: #0A3BBC;
+@bfcolor: #204EC2;
+@label: #8F979F;
+@toph: 60px;
+
+// 覆盖全局框架样式
+.el-button{
+    &--primary{
+        color: #fff;
+        background-color: @bncolor;
+        border-color: @bncolor;
+    }
+    &--success{
+        color: #fff;
+        background-color: #3eaf7c;
+        &:hover, &:focus{
+            color: #f1f2f3 !important;
+            background-color: lighten(#3eaf7c, -10%) !important;
+            border-color: lighten(#3eaf7c, -10%) !important;
+        }
+    }
+    &.is-plain{
+        color: @bfcolor;
+        background-color: transparent;
+        border-color: @bncolor;
+    }
+    // &:hover, &:focus{
+    //     color: #fff !important;
+    //     background-color: lighten(@bncolor, 10%) !important;
+    //     border-color: lighten(@bncolor, 10%) !important;
+    // }
+}
+.el-radio-group{
+    .el-radio-button{
+        &__inner{
+            background-color: #E5E8EF;
+            color: #8F979F;
+            // width: 80px;
+            text-align: center;
+            border-color: transparent !important;
+        }
+        &.is-active{
+            .el-radio-button__inner{
+                background-color: #fff;
+                color: @bncolor;
+                box-shadow: none !important;
+            }
+        }
+    }
+
+}
+.el-form {
+    &-item {
+        margin: 0;
+        padding: 12px 0;
+        &__label{
+            font-size: 12px;
+            color: #8F979F;
+            line-height: 14px !important;
+        }
+    }
+    .separate-item{
+        .line{
+            text-align: center;
+        }
+    }
+    .el-input__inner{
+        font-size: 14px;
+        color: @fzcolor;
+    }
+    .el-select{
+        width: 100%;
+    }
+    // money种类输入下拉框样式
+    .b-select-money {
+        .el-input-group__prepend{
+            background-color: #fff;
+            width: 70px;
+        }
+        .el-select{
+            width: 70px;
+            margin: -10px -10px;
+            .el-input__inner{
+                padding-left:8px;
+            }
+        }
+    }
+}
+
+// table组件样式覆盖
+.el-table {
+    &__expanded-cell {
+        background-color: #F9FAFC;
+        border-left: 2px solid #0035C2;
+    }
+}
+
+// 搜索模块
+.b-search{
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    padding: 10px 0px 20px;
+}
+// 分页模块
+.b-page{
+    padding: 20px 10px 15px 0;
+    text-align: right;
+}
+// 卡片效果
+.b-card{
+    .el-card__header {
+        padding: 0px !important;
+    }
+    &-header{
+        position: relative;
+        height: 220px;
+        img {
+        width: 100%;
+        height: 100%;
+        transition: all 0.2s linear;
+        &:hover {
+            transform: scale(1.1, 1.1);
+            filter: contrast(130%);
+        }
+        }
+    }
+}
+// 路由主视窗
+.b-con{
+    position: relative;
+    width: 100%;
+    &-title{
+        position: relative;
+        width: 100%;
+        height: 60px;
+        border-bottom: 1px solid #E4E6EC;
+        clear: both;
+        h1{
+            float: left;
+            line-height: 60px;
+            font-size: 20px;
+            color: #666;
+            margin: 0;
+        }
+    }
+    &-top{
+        position: relative;
+        height: @toph;
+        overflow: hidden;
+        h1{
+            padding: 0;
+            margin: 0;
+            font-size: 32px;
+            color: @fzcolor;
+            height: @toph;
+            line-height: @toph;
+        }
+        &-item{
+            height: @toph;
+            line-height: @toph;
+        }
+    }
+}
+// table表格
+.b-table{
+    position: relative;
+    width: 100%;
+    padding: 15px 0;
+}
+// 通用表单样式
+.b-input{
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    padding: 12px 15px;
+    &-info{
+        position: relative;
+        padding-top:10px;
+        h3{
+            font-size: 14px;
+            color: @fzcolor;
+            line-height: 45px;
+        }
+        p{
+            font-size: 12px;
+            color: @label;
+            line-height: 18px;
+        }
+    }
+    &-main{
+        position: relative;
+        padding: 15px;
+        background-color: #fff;
+        border: 1px solid #E4E6EC;
+        border-radius: 4px;
+        .el-col{
+            padding: 0 !important;
+            .el-form-item{
+                padding: 0 !important;
+            }
+        }
+    }
+    &-foot{
+        padding-top:20px;
+    }
+}
+// 全局过滤按钮
+.b-filter{
+    color: @fzcolor;
+    font-size: 16px;
+    padding: 8px 15px;
+    vertical-align: -2px;
+}
+// 搜索条件全局样式
+.b-insm{
+    position: relative;
+    width: 100%;
+    &-label{
+        width: 100%;
+        font-size: 12px;
+        color: @label;
+        height: 30px;
+        line-height: 30px;
+    }
+    &-input{
+        width: 100% !important;
+        font-size: 14px;
+        color: @fzcolor;
+        height: 40px;
+    }
+}
+// 字体颜色公共方法
+.b-fc{
+    color: @fzcolor;
+}
+
+// 没有数据的缺省页
+.b-nobox {
+    position: relative;
+    width: 100%;
+    padding-top: 60px;
+    &-main {
+        position: relative;
+        width: 40%;
+        height: 400px;
+        text-align: center;
+        padding-top: 260px;
+        margin: auto;
+        background-image: url('../assets/img/nodata.png');
+        background-position: top center;
+        background-size: auto 100%;
+        h5 {
+            font-size: 20px;
+            color: @bncolor;
+            line-height: 40px;
+        }
+        p {
+            font-size: 16px;
+            color: #99C7FF;
+            line-height: 35px;
+        }
+    }
+}
+// 国家下拉框样式
+.b-option-money{
+    padding:0 10px!important;
+}
+
+.b-tabv {
+    h5 {
+        font-size: 14px;
+        color: #4A4A4A;
+        line-height: 22px;
+        padding-bottom: 15px;
+        text-transform: Uppercase;
+    }
+    &-item {
+        position: relative;
+        width: 100%;
+        &-label {
+            font-size: 12px;
+            color: #8F979F;
+            width: 110px;
+            height: 24px;
+            line-height: 24px;
+            text-transform: Uppercase;
+        }
+        &-val {
+            font-size: 12px;
+            color: #12123C;
+            height: 24px;
+            line-height: 24px;
+        }
+    }
+}
+
+.b-pre {
+    .el-dialog{
+        max-width: 600px;
+        &__body {
+            padding: 0 3px;
+        }
+    }
+}
