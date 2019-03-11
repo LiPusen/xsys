@@ -42,17 +42,11 @@ export const asyncRoutes = [{
     redirect: '/base/index',
     meta: { title: '基本信息', icon: 'star', cache: true },
     children: [{
-        name: 'base1',
+        name: 'base',
         path: 'index',
-        hidden: false,
+        hidden: true,
         component: () => import('@/views/board'),
-        meta: { title: '常见问题', icon: 'export', cache: false, affix: true }
-    }, {
-        name: 'base2',
-        path: 'test',
-        hidden: false,
-        component: () => import('@/views/board'),
-        meta: { title: '测试页', icon: 'link', cache: false, affix: true }
+        meta: { title: '概览', icon: 'dashboard', cache: false, affix: true }
     }], 
 }, {
     path: '/icon',
